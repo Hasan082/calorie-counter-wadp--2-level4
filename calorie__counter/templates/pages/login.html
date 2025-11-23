@@ -1,0 +1,7 @@
+{% extends 'pages/auth.html' %}
+{% load crispy_forms_tags %}
+
+{% block auth_content %}
+    {% csrf_token %}
+    {{ form|crispy }}
+{% endblock %}

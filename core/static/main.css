@@ -1,0 +1,98 @@
+body {
+    background-color: aliceblue;
+}
+
+.ftco-section {
+    padding: 2.5em 0;
+}
+
+.wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    border-radius: 15px;
+}
+
+.login-wrap {
+    position: relative;
+}
+
+#id_username_helptext,
+#id_password2_helptext,
+#id_password1_helptext {
+    display: none;
+}
+
+.text-primary {
+    color: #04AA6D !important;
+}
+
+.bg-primary,
+.text-bg-primary,
+.btn-primary {
+    transition: all .2s linear;
+    background-color: #04AA6D !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    opacity: .8;
+    background-color: #04AA6D !important;
+}
+
+.sidebar-navigation {
+    display: inline-block;
+    min-height: 100vh;
+    width: 80px;
+    background-color: #313443;
+    float: left;
+}
+
+.sidebar-navigation ul {
+    text-align: center;
+    color: white;
+}
+.sidebar-navigation ul {
+    text-align: center;
+    color: white;
+    list-style: none;
+}
+.sidebar-navigation ul li {
+    padding: 28px 0;
+    cursor: pointer;
+    transition: all ease-out 120ms;
+}
+
+.sidebar-navigation ul li i {
+    display: block;
+    font-size: 24px;
+    transition: all ease 450ms;
+}
+
+.sidebar-navigation ul li .tooltip {
+    display: inline-block;
+    position: absolute;
+    background-color: #313443;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-top: -26px;
+    left: 90px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.main-body {
+    background-color: transparent !important;
+    padding: 20px 30px;
+}
+
+.table-primary {
+    background-color: #04AA6D !important;
+}

@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+  <body>
+    {% include 'include/sidebar.html' %}
+    <section class="home-section">
+      <div class="home-content d-flex justify-content-between align-items-center">
+        <div class="top-left d-flex align-items-center">
+          <i class="bx bx-menu"></i>
+          <span class="text">Welcome Back, {{ user }}</span>
+        </div>
+
+        <div class="top-right">
+          <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link">Logout</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="home-section main-body">
+      {% block content %}
+
+      {% endblock %}
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+  </body>
+</html>

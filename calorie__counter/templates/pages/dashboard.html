@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Dashboard
+{% endblock %}
+
+{% block content %}
+  <span class="d-block mt-5">{% include 'include/alert.html' %}</span>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow bg-primary bg-gradient border-0 py-3 rounded-4">
+          <div class="card-body d-flex justify-content-between gap-3 align-items-center">
+            <span class="display-4">🔥</span>
+            <div class="bmr text-white text-end">
+              <h4 class="m-0">Required BMR</h4>
+              <p class="m-0 display-5">{{ req_bmr }} Kcal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow bg-danger bg-gradient border-0 py-3 rounded-4">
+          <div class="card-body d-flex justify-content-between gap-3 align-items-center">
+            <span class="display-4">🥣</span>
+            <div class="calorie text-white text-end">
+              <h4 class="m-0">Todays Calorie Intake</h4>
+              <p class="m-0 display-5">{{ total_calories }} Kcal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow bg-warning bg-gradient border-0 py-3 rounded-4">
+          <div class="card-body d-flex justify-content-between gap-3 align-items-center">
+            <span class="display-4">👁</span>
+            <a href="{% url 'profile' %}" class="view-profile text-white text-end d-block text-white text-decoration-none">
+              <h4 class="m-0">View Profile</h4>
+              <p class="m-0 display-5">{{ user|upper }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped table-hover shadow-sm">
+          <thead>
+            <th>Date</th>
+            <th>Item Name</th>
+            <th>Calorie Consumed Today</th>
+          </thead>
+          {% for cal in users_cal %}
+            <tr>
+              <td>{{ cal.date }}</td>
+              <td>{{ cal.item_name }}</td>
+              <td>{{ cal.calorie_consumed }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
